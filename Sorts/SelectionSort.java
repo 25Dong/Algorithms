@@ -6,15 +6,15 @@ package Sorts;
  * @see SortAlgorithm
  */
 
-public class SelectionSort implements SortAlgorithm {
+public class SelectionSort<T> implements SortAlgorithm {
 
     /**
      * This method swaps the two elements in the array
      * @param arr, i, j The array for the swap and 
                         the indexes of the to-swap elements
      */
-    public void swap(T[] arr, int i, int j) {
-       T temp = arr[i];
+    public void swap(Object[] arr, int i, int j) {
+       Object temp = arr[i];
        arr[i] = arr[j];
        arr[j] = temp;
     }
@@ -47,12 +47,13 @@ public class SelectionSort implements SortAlgorithm {
         return arr;
     }
 
+
     // Driver Program
     public static void main(String[] args) {
 
         Integer[] arr = {4, 23, 6, 78, 1, 54, 231, 9, 12};
 
-        SelectionSort selectionSort = new SelectionSort();
+        SelectionSort<Integer> selectionSort = new SelectionSort<Integer>();
 
         Integer[] sorted = selectionSort.sort(arr);
 
